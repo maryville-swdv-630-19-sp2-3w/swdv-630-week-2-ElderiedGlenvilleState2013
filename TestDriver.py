@@ -1,11 +1,16 @@
 from CheckingAccount import *
+import unittest
 
 
-bank = CheckingAccount('El , Mckinney', '3234 drive, michigan', 23445, 200, 100)
-
-print(bank.name)
-print(bank.address)
-
-bankBalance = bank.balance(500,200)
-print(bankBalance)
-print(bank.rewardsPoints(bankBalance))
+class Test(unittest.TestCase):
+    def test_CheckingAccount(self):
+        result = CheckingAccount.rewardsPoints(self,200)
+        expected = 2
+        self.assertEqual(expected, result)
+        
+        
+        
+        
+        
+if __name__== '__main__':
+    unittest.main()
